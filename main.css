@@ -1,5 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .tab {
     display: flex;
+    position: relative;
 }
 .tab > :nth-child(1){
     background-color: #f05555;
@@ -16,13 +22,26 @@
 .tab-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 10px;
     background-color: #000;
     border: 1px solid #000;
     opacity: 0.4;
+    min-width: 100px;
 }
-
-
+.tab-item > :nth-child(1){
+    margin-right: 10px;
+}
+.tab > .line {
+    height: 5px;
+    background-color: #770fa0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    transition: all 0.2s ease;
+}
 .tab-content {
     display: flex;
 }

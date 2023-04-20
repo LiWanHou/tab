@@ -26,6 +26,7 @@
                 <ion-icon name="logo-vue"></ion-icon>
                 Vue.Js
             </div>
+            <div class="line"></div>
         </div>
         <div class="tab-content">
             <div class="tab-content-item">
@@ -48,22 +49,24 @@
     </div>
 
 <script>
-    var tabs = document.querySelectorAll('.tab-item')
-    var contents = document.querySelectorAll('.tab-content-item')
+    var $ = document.querySelector.bind(document)
+    var $$ = document.querySelectorAll.bind(document)
+
+    var tabs = $$('.tab-item')
+    var contents = $$('.tab-content-item')
+
+    var line = $('.tab .line')
+
     tabs.forEach((tab, index) => {
         var content = contents[index]
-        
         tab.onclick = function(){
-            var tabActive = document.querySelector('.tab-item.active')
-            if (tabActive) {
-                tabActive.classList.remove('active')
-            }
-            var contentActive = document.querySelector('.tab-content-item.active')
-            if (contentActive) {
-                contentActive.classList.remove('active')
-            }
+            if ($('.tab-item.active')) $('.tab-item.active').classList.remove('active')
+            if ($('.tab-content-item.active')) $('.tab-content-item.active').classList.remove('active')
             this.classList.add('active')
             content.classList.add('active')
+            
+            line.style.left = this.offsetLeft + 'px'
+            line.style.width = this.offsetWidth + 'px'
         }
     })
 </script>
