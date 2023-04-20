@@ -10,10 +10,22 @@
 <body>
     <div>
         <div class="tab">
-            <div class="tab-item">React</div>
-            <div class="tab-item">Angular</div>
-            <div class="tab-item">Embed</div>
-            <div class="tab-item">Vue.Js</div>
+            <div class="tab-item">
+                <ion-icon name="logo-react"></ion-icon>
+                React
+            </div>
+            <div class="tab-item">
+                <ion-icon name="logo-angular"></ion-icon>
+                Angular
+            </div>
+            <div class="tab-item">
+                <ion-icon name="bluetooth-outline"></ion-icon>
+                Embed
+            </div>
+            <div class="tab-item">
+                <ion-icon name="logo-vue"></ion-icon>
+                Vue.Js
+            </div>
         </div>
         <div class="tab-content">
             <div class="tab-content-item">
@@ -34,5 +46,29 @@
             </div>
         </div>
     </div>
+
+<script>
+    var tabs = document.querySelectorAll('.tab-item')
+    var contents = document.querySelectorAll('.tab-content-item')
+    tabs.forEach((tab, index) => {
+        var content = contents[index]
+        
+        tab.onclick = function(){
+            var tabActive = document.querySelector('.tab-item.active')
+            if (tabActive) {
+                tabActive.classList.remove('active')
+            }
+            var contentActive = document.querySelector('.tab-content-item.active')
+            if (contentActive) {
+                contentActive.classList.remove('active')
+            }
+            this.classList.add('active')
+            content.classList.add('active')
+        }
+    })
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

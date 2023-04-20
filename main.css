@@ -1,0 +1,37 @@
+.tab {
+    display: flex;
+}
+.tab > :nth-child(1){
+    background-color: #f05555;
+}
+.tab > :nth-child(2){
+    background-color: #9be063;
+}
+.tab > :nth-child(3){
+    background-color: #6384e0;
+}
+.tab > :nth-child(4){
+    background-color: #ee8bdd;
+}
+.tab-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #000;
+    border: 1px solid #000;
+    opacity: 0.4;
+}
+
+
+.tab-content {
+    display: flex;
+}
+.tab-content > .tab-content-item {
+    display: none;
+}
+.tab-item.active {
+    opacity: 1;
+}
+.tab-content-item.active {
+    display: block;
+}
